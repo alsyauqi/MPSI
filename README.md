@@ -11,6 +11,6 @@
 - [x] CRUD.json: Read,Delete
 
  TO DO
-- [ ] CRUD.json: Create,Delete
+- [ ] CRUD.json: Create,Update
 - [ ] Print Document
 - [ ] Interface Enhancement
