@@ -334,7 +334,7 @@
                             <!-- Footer -->
                             <div class="modal-footer">
                                 <div class="options">
-                                    <p>Belum punya akun? <a href="daftar.php">Daftar</a></p>
+                                    <p>Belum punya akun? <a href="daftarmahasiswa.php">Daftar</a></p>
                                     <p>Lupa <a href="#">Password?</a></p>
                                 </div>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>

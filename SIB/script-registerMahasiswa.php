@@ -39,6 +39,7 @@
 
 	// $sql = "INSERT INTO tb_user (id_detail_user,email, password, salt, tanggal_pembuatan, terakhir_login) VALUES ('$last_id', '$emailMahasiswa', '$passwordMahasiswa', '$saltMahasiswa' , '$roleMahasiswa' , '$tanggalPembuatan' , '$terakhirLogin')";
     $sql = "INSERT INTO tb_user (id_detail_user,email, password, salt, tanggal_pembuatan, terakhir_login) VALUES ('$last_id', '$emailMahasiswa', '$passwordMahasiswa', '$saltMahasiswa' , '$roleMahasiswa' , '$tanggalPembuatan' , '$terakhirLogin')";
+	
 	if(mysqli_query($conn, $sql)){
 		echo "Sukses";
 	} else {

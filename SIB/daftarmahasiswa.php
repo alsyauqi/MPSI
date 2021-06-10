@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
 
 	<meta charset="utf-8">
@@ -33,7 +32,40 @@
 
 		</div>
 	</div>
+	<div class="container free-bird" style="z-index: 2">
+		<div class="row">
+			<div class="col-md-8 col-lg-7 mx-auto float-xs-snone white z-depth-1 py-2 px-2">
+				<h2 class="h2-responsive"><strong>Form Daftar Akun Mahasiswa</strong></h2>
 
+				<div class="card-block">
+					<form action="" id="registerForm">
+					<div class="md-form">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="email" name="email" id="inputEmailMhs" class="form-control validate">
+                                    <label for="inputEmailMhs" data-error="Emailsalah" data-success="">E-mail</label>
+                                </div>
+
+                                <br>
+
+                                <div class="md-form">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <input type="password" name="password" id="inputPasswordMhs" class="form-control">
+                                    <label for="inputPasswordMhs">Password</label>
+                                </div>
+						
+						
+						<div class="text-xs-left">
+							<button type="submit" class="btn btn-primary waves-effect waves-light submit">Daftar</button>
+						</div>
+					</form>
+					<div class="my-2">
+						<p style="font-weight: 300;font-size: 0.75rem">Field dengan tanda bintang (*) harus diisi</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 
 	<div class="fixed-action-btn" style="bottom: 45px; right:24px;">
 		<a class="btn-floating btn-large red" id="fixedBtn">
@@ -61,7 +93,7 @@
 			$("form").submit(function(e){
 				var isValid = true;
 				var counter = 1;
-				var url = "script-register.php";
+				var url = "script-registerMahasiswa.php";
 
 				$("input,textarea").each(function(){
 					if($.trim($(this).val()).length == 0){

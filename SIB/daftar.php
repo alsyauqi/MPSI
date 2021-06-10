@@ -35,7 +35,7 @@
 	<div class="container free-bird" style="z-index: 2">
 		<div class="row">
 			<div class="col-md-8 col-lg-7 mx-auto float-xs-snone white z-depth-1 py-2 px-2">
-				<h2 class="h2-responsive"><strong>Form Daftar Akun Pendonor</strong></h2>
+				<h2 class="h2-responsive"><strong>Form Daftar Akun Donatur</strong></h2>
 
 				<div class="card-block">
 					<form action="" id="registerForm">
@@ -53,7 +53,7 @@
 						</div>
 						<div class="md-form">
 							<input type="text" id="inputNama" name="nama" class="form-control validate required" idField="Nama Pendonor">
-							<label for="inputNama" data-error="" data-success="">Nama Pendonor *</label>
+							<label for="inputNama" data-error="" data-success="">Nama Donatur *</label>
 						</div>
 						<div class="md-form">
 							<input type="text" id="inputTelepon" name="telepon" class="form-control validate required" idField="Nomor Telepon">
@@ -65,7 +65,7 @@
 						</div>
 						<div class="md-form">
 							<input type="text" id="inputPenanggungJawab" name="penanggungJawab" class="form-control validate required" idField="Nama Lengkap Penanggung Jawab">
-							<label for="inputPenanggungJawab" data-error="" data-success="">Nama Lengkap Penanggung Jawab Pendonor *</label>
+							<label for="inputPenanggungJawab" data-error="" data-success="">Nama Lengkap Penanggung Jawab Donatur *</label>
 						</div>
 						<div class="text-xs-left">
 							<button type="submit" class="btn btn-primary waves-effect waves-light submit">Daftar</button>
