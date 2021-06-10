@@ -33,7 +33,7 @@
 			<!-- Konten yang di collapse -->
 			<div class="collapse navbar-toggleable-xs" id="collapseContent">
 				<a class="navbar-brand" href="#">
-					<strong>SIB PENS</strong>
+					<strong>SIB </strong>
 				</a>
 
 				<ul class="nav navbar-nav smooth-scroll">

@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 
 	<meta charset="utf-8">
@@ -32,53 +33,7 @@
 
 		</div>
 	</div>
-	<div class="container free-bird" style="z-index: 2">
-		<div class="row">
-			<div class="col-md-8 col-lg-7 mx-auto float-xs-snone white z-depth-1 py-2 px-2">
-				<h2 class="h2-responsive"><strong>Form Daftar Akun Pendonor</strong></h2>
 
-				<div class="card-block">
-					<form action="" id="registerForm">
-						<div class="md-form">
-							<input type="text" id="inputUser" name="username" class="form-control validate required" idField="Username">
-							<label for="inputUser" data-error="" data-success="">Username *</label>
-						</div>
-						<div class="md-form">
-							<input type="password" id="inputPassword" name="password" class="form-control validate required" idField="Password">
-							<label for="inputPassword" data-error="" data-success="">Password *</label>
-						</div>
-						<div class="md-form">
-							<input type="email" id="inputEmail" name="email" class="form-control validate required" idField="E-mail">
-							<label for="inputEmail" data-error="" data-success="">Email *</label>
-						</div>
-						<div class="md-form">
-							<input type="text" id="inputNama" name="nama" class="form-control validate required" idField="Nama Pendonor">
-							<label for="inputNama" data-error="" data-success="">Nama Pendonor *</label>
-						</div>
-						<div class="md-form">
-							<input type="text" id="inputTelepon" name="telepon" class="form-control validate required" idField="Nomor Telepon">
-							<label for="inputTelepon" data-error="" data-success="">Nomor Telepon *</label>
-						</div>
-						<div class="md-form">
-							<textarea type="text" id="inputAlamat" name="alamat" class="md-textarea validate required" idField="Alamat"></textarea>
-							<label for="inputAlamat" data-error="" data-success="">Alamat *</label>
-						</div>
-						<div class="md-form">
-							<input type="text" id="inputPenanggungJawab" name="penanggungJawab" class="form-control validate required" idField="Nama Lengkap Penanggung Jawab">
-							<label for="inputPenanggungJawab" data-error="" data-success="">Nama Lengkap Penanggung Jawab Pendonor *</label>
-						</div>
-						<div class="text-xs-left">
-							<button type="submit" class="btn btn-primary waves-effect waves-light submit">Daftar</button>
-						</div>
-					</form>
-					<div class="my-2">
-						<p style="font-weight: 300;font-size: 0.75rem">Field dengan tanda bintang (*) harus diisi</p>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
 
 	<div class="fixed-action-btn" style="bottom: 45px; right:24px;">
 		<a class="btn-floating btn-large red" id="fixedBtn">
