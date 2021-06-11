@@ -1,15 +1,17 @@
-# MPSI-Sistem Informasi Beasiswa 
+# MPSI-Sistem Informasi Beasiswa
 
+
+- [x] CRUD.json: Read,Delete
 - [x] Dashboard
 - [x] Main Menu
+- [x] Modals User
 - [x] Login Admin
 - [x] Login Mahasiswa
+- [x] Login Donatur
 - [x] Register Donatur
-- [x] Modals User
 - [x] CSS
 - [x] Bootstrap
 - [x] Interface Enhancement
-- [x] CRUD.json: Read,Delete
 
  TO DO
 - [ ] CRUD.json: Create,Update
