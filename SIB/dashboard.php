@@ -37,9 +37,9 @@ session_start();
             <!-- Header & Logo -->
             <li>
                 <div class="logo-wrapper sn-ad-avatar-wrapper">
-                    <img src="http://mdbootstrap.com/images/avatars/img%20(9)" class="img-fluid rounded-circle">
+                
                     <div class="rgba-stylish-strong">
-                        <p class="user white-text">Email : <br><?php echo $_SESSION["email"]?></p>
+                        <p  class="waves-effect" id="btnDashboard"><i class="fa  fa-envelope-o"></i><class="user white-text"> Email  <br><?php echo $_SESSION["email"]?></p>
                     </div>
                 </div>
             </li>
@@ -51,22 +51,27 @@ session_start();
                         <a class="waves-effect" id="btnDashboard"><i class="fa fa-home"></i> Dashboard</a>
                     </li>
 
+
                     <?php 
                     if($_SESSION["role"] == 'admin'){ ?>
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-table"></i> Administrasi <i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
+                                <li><a class="waves-effect" href="dasbor.html">Pengumuman</a></li>
                                 <li><a class="waves-effect" id="btnTbUser">Daftar User</a></li>
                                 <li><a class="waves-effect" id="btnTbPendonor">Daftar Pendonor</a></li>
                                 <li><a class="waves-effect" id="btnTbBeasiswa">Daftar Beasiswa</a></li>
                                 <li><a class="waves-effect" id="btnTbApplyBeasiswa">Riwayat Apply Beasiswa</a></li>
                                 <li><a class="waves-effect" id="btnTbDokumen">Dokumen</a></li>
                                 <li><a class="waves-effect" id="btnTbRequestDokumen">Riwayat Request Dokumen</a></li>
+                                
                             </ul>
                         </div>
+                        
                     </li>
+                    
                     <li>
-                        <a class="waves-effect" href="#"><i class="fa fa-bar-chart"></i> Stastik </a>
+                        <a class="waves-effect" href="Homekelola.html"><i class="fa fa-bar-chart"></i> Kelola Beasiswa </a>
                     </li>
                     <?php } ?>
 
@@ -99,6 +104,11 @@ session_start();
 
                     <?php
                     if($_SESSION["role"] == 'mahasiswa'){ ?>
+
+                    <li>
+                        <a class="waves-effect" href="dasbor.html"><i class="fa fa-bullhorn"></i>Pengumuman</a></a>
+                    </li>
+
                     <li>
                         <a class="waves-effect" id="btnListBeasiswaMahasiswa"><i class="fa fa-graduation-cap"></i> Daftar Beasiswa</a>
                     </li>
@@ -110,7 +120,7 @@ session_start();
                     <li><a class="waves-effect" id="btnTbDokumen"><i class="fa fa-files-o"></i> Daftar Dokumen</a>
                     </li>
                     <li>
-                        <a class="waves-effect" href="daftar1.html"><i class="fa fa-book"></i> Ajukan Beasiswa</a>
+                        <a class="waves-effect" href="index.html"><i class="fa fa-book"></i> Ajukan Beasiswa</a>
                     </li>
                     <?php } ?>
                 </ul>
@@ -127,24 +137,16 @@ session_start();
                 <p>SIB-DASHBOARD</p>
             </div>
 
+           
             <ul class="nav navbar-nav float-xs-right">
                 <li class="nav-item">
-                    <a class="nav-link" id="btnModalTest" data-toggle="modal" data-target="#modalRequestDokumen" data><i class="fa fa-eye"></i> <span class="hidden-sm-down">Test Modal</span></a>
+                    <a class="nav-link" href="dasbor.html#notifikasi"><i class="fa fa-envelope"></i> <span >Notifikasi</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Pemberitahuan</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"><i class="fa fa-comments-o"></i> <span class="hidden-sm-down">Request Dokumen</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"><i class="fa fa-history"></i> <span class="hidden-sm-down">Riwayat Dokumen</span></a>
-                </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profil</span></a>
                     <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                        <a class="dropdown-item" id="btnLogout">Keluar</a>
-                        <a class="dropdown-item" href="#">Akun</a>           
+                        <a class="dropdown-item" id="btnLogout">Logout</a>
                     </div>
                 </li>
             </ul>

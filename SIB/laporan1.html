@@ -15,7 +15,7 @@
 			<tr><td><div class="sidebar_menu "> Edit Beasiswa </div></td></tr>
 			<tr><td><div class="sidebar_menu"> Penerimaan </div></td></tr>
 			<tr><td><div class="sidebar_menu active"> Laporan </div></td></tr>
-			<tr><td><div class="sidebar_menu"> Logout </div></td></tr>
+			<tr><td><div class="sidebar_menu"> <a href="index.html"id="btnLogout"> Logout </a> </div></td></tr>
 
 		</table>
 	</div>
@@ -73,6 +73,174 @@
 
 </body>
 
+ <!-- ===================================================================
+                            KUMPULAN MODAL
+    =================================================================== -->
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script>
+        $(".button-collapse").sideNav();
+        var el = document.querySelector('.custom-scrollbar');
+        Ps.initialize(el);
+    </script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+    <script type="text/javascript" src="js/functionCRUD.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            dashboard();
+            $('.datepicker').pickadate();
+            $('.mdb-select').material_select();            
+
+            $('#btnLogout').click(function(){
+                var url = 'destroy.php';
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    success: function(){
+                        $(location).attr('href',"index.php");
+                    },
+                    error: function(jqXHR, status, err){
+                        alert("Login gagal");
+                        console.log("jqXHR : "+jqXHR);
+                        console.log("status : "+status);
+                        console.log("err : "+err);
+                    }
+                });
+            });            
+
+            $('#btnBeasiswaPendonor').click(function(){
+                var url = 'loadBeasiswaPendonor.php';
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: url,
+                    success: function(data){
+                        console.log(data);
+                        console.log(data.length);
+                        console.log(data[0]);
+                        $('#mainContent').empty();
+                        $('#mainContent').append("<div class='row'>");
+                        for(var i = 0; i<data.length; i++){
+                            $('#mainContent').append('<div class="col-lg-4">'+
+                                '<div class="card wow fadeIn" data-wow-delay="0.2s">'+
+                                '<div class="view overlay hm-white-slight">'+
+                                '<img src="http://mdbootstrap.com/img/photos/Horizontal/Nature/4-col/img%20(120).jpg" class="img-fluid" alt="">'+
+                                '<a href="#">'+
+                                '<div class="mask"></div>'+
+                                '</a>'+
+                                '</div>'+
+
+                                '<div class="card-block">'+
+                                '<h4 class="card-title">'+data[i].NAMA_BEASISWA+'</h4>'+
+                                '<p class="card-text">'+data[i].DESKRIPSI_BEASISWA+'</p>'+
+                                '<a href="detailbeasiswa.php?nama='+data[i].NAMA_BEASISWA+'&deskripsi='+data[i].DESKRIPSI_BEASISWA+
+                                '&deadline='+data[i].DEADLINE_BEASISWA+'&jurusan='+data[i].TARGET_JURUSAN+'&prodi='+data[i].TARGET_PRODI+
+                                '&semester='+data[i].TARGET_SEMESTER+'&kontak='+data[i].CONTACT_PERSON_TELEPON+'&status='+data[i].STATUS_BEASISWA+
+                                '&persyaratan='+data[i].PERSYARATAN_DOKUMEN+
+                                '" class="btn btn-info">Info Selengkapnya</a>'+
+                                '</div>'+
+
+                                '<div class="card-data">'+
+                                '<ul>'+
+                                '<li><i class="fa fa-clock-o"></i> '+data[i].DEADLINE_BEASISWA+' </li>'+
+                                '<li><i class="fa fa-user"></i> '+data[i].PENDAFTAR_BEASISWA+'</li>'+
+                                '</ul>'+
+                                '</div>'+
+                                '</div>'+
+                                '</div>');
+                        }
+                        $('#mainContent').append('</div>');
+                    },
+                    error: function(jqXHR, status, err){
+                        alert("Load Beasiswa Pendonor Gagal");
+                        console.log("jqXHR : "+jqXHR);
+                        console.log("status : "+status);
+                        console.log("err : "+err);
+                    }
+                });
+            });
+
+            $("#btnListBeasiswaMahasiswa").click(function(){
+                var url = 'loadBeasiswaMahasiswa.php';
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: url,
+                    success: function(data){
+                        console.log(data);
+                        console.log(data.length);
+                        console.log(data[0]);
+                        $('#mainContent').empty();
+                        $('#mainContent').append("<div class='row'>");
+                        for(var i = 0; i<data.length; i++){
+                            $('#mainContent').append('<div class="col-lg-4">'+
+                                '<div class="card wow fadeIn" data-wow-delay="0.2s">'+
+                                '<div class="view overlay hm-white-slight">'+
+                                '<img src="http://mdbootstrap.com/img/photos/Horizontal/Nature/4-col/img%20(120).jpg" class="img-fluid" alt="">'+
+                                '<a href="#">'+
+                                '<div class="mask"></div>'+
+                                '</a>'+
+                                '</div>'+
+
+                                '<div class="card-block">'+
+                                '<h4 class="card-title">'+data[i].NAMA_BEASISWA+'</h4>'+
+                                '<p class="card-text">'+data[i].DESKRIPSI_BEASISWA+'</p>'+
+                                '<a href="detailbeasiswa.php?nama='+data[i].NAMA_BEASISWA+'&deskripsi='+data[i].DESKRIPSI_BEASISWA+
+                                '&deadline='+data[i].DEADLINE_BEASISWA+'&jurusan='+data[i].TARGET_JURUSAN+'&prodi='+data[i].TARGET_PRODI+
+                                '&semester='+data[i].TARGET_SEMESTER+'&kontak='+data[i].CONTACT_PERSON_TELEPON+'&status='+data[i].STATUS_BEASISWA+
+                                '&persyaratan='+data[i].PERSYARATAN_DOKUMEN+
+                                '" class="btn btn-info">Info Selengkapnya</a>'+
+                                '</div>'+
+
+                                '<div class="card-data">'+
+                                '<ul>'+
+                                '<li><i class="fa fa-clock-o"></i> '+data[i].DEADLINE_BEASISWA+' </li>'+
+                                '<li><i class="fa fa-user"></i> '+data[i].PENDAFTAR_BEASISWA+' </li>'+
+                                '</ul>'+
+                                '</div>'+
+                                '</div>'+
+                                '</div>');
+                        }
+                        $('#mainContent').append('</div>');
+                    },
+                    error: function(jqXHR, status, err){
+                        alert("Load Beasiswa Pendonor Gagal");
+                        console.log("jqXHR : "+jqXHR);
+                        console.log("status : "+status);
+                        console.log("err : "+err);
+                    }
+                });
+            });
+
+            $("#fixedBtn").click(function(){
+                console.log("open");
+                $('#modalRegister').modal('toggle');
+                $('#modalRegister').on('shown.bs.modal', function(){
+                    console.log("open");
+                    $('#namaBeasiswa').focus();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
 
 
 </html>

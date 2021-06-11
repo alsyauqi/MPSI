@@ -54,7 +54,7 @@
                         <a class="nav-link" id="btnDashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="btnLogout">Keluar</a>
+                        <a class="nav-link" id="btnLogout">Logout</a>
                     </li>
                     <?php } else {?>
                     <li class="nav-item">

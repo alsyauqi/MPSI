@@ -51,21 +51,7 @@
                         <input type="password" id="inputPasswordUser" name="passwordUser" class="form-control validate required" idField="Password">
                         <label for="inputPasswordUser" data-error="" data-success="">Password *</label>
                     </div>
-                    <div class="md-form">
-                        <h5>Role</h5>
-                        <fieldset class="form-group">
-                            <input name="radioRule" type="radio" class="with-gap" id="radioMahasiswa" value="mahasiswa">
-                            <label for="radioMahasiswa">Mahasiswa</label>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <input name="radioRule" type="radio" class="with-gap" id="radioAdmin" value="admin">
-                            <label for="radioAdmin">Admin</label>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <input name="radioRule" type="radio" class="with-gap" id="radioBaak" value="baak">
-                            <label for="radioBaak">BAAK</label>
-                        </fieldset>
-                    </div>
+                    
                     <div class="md-form">
                         <input type="text" id="inputNamaLengkapUser" name="namaLengkapUser" class="form-control validate required" idField="Nama Lengkap">
                         <label for="inputNamaLengkapUser" data-error="" data-success="">Nama Lengkap *</label>
@@ -141,6 +127,7 @@
 			<i class="fa fa-arrow-left"></i>
 		</a>
 	</div>
+    
 
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
