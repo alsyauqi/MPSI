@@ -103,13 +103,14 @@ session_start();
                         <a class="waves-effect" id="btnListBeasiswaMahasiswa"><i class="fa fa-graduation-cap"></i> Daftar Beasiswa</a>
                     </li>
                     <li>
-                        <a class="waves-effect" href="#"><i class="fa fa-file-text"></i> Request Dokumen</a>
+                    <li>
+
+                        <a class="waves-effect" id="btnTbRequestDokumen"><i class="fa fa-file-text"></i> Request Dokumen</a>
+                    </li>
+                    <li><a class="waves-effect" id="btnTbDokumen"><i class="fa fa-files-o"></i> Daftar Dokumen</a>
                     </li>
                     <li>
-                        <a class="waves-effect" href="#"><i class="fa fa-files-o"></i> Daftar Dokumen</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect" href="#"><i class="fa fa-institution"></i> Applied Beasiswa</a>
+                        <a class="waves-effect" href="daftar1.html"><i class="fa fa-book"></i> Ajukan Beasiswa</a>
                     </li>
                     <?php } ?>
                 </ul>
@@ -153,8 +154,8 @@ session_start();
     <!--Main layout-->
     <main>
         <div class="container-fluid" id="mainContent">
-
         </div>
+        
     </main>
     <!--/Main layout-->
 
@@ -268,7 +269,7 @@ session_start();
                             <div class="col-md-3">FOTO</div>
                             <div class="col-md-9">
                                 <div class="row">
-                                    <div class="col-md-3">Nama Lenkap :</div>
+                                    <div class="col-md-3">Nama Lengkap :</div>
                                     <div class="col-md-9" id="contNama">{{NAMANYA}}</div>
                                 </div>
                                 <div class="row">
@@ -797,6 +798,7 @@ session_start();
                     </button>
                     <h4 class="modal-title" id="modalCreateUserLabel">Create User</h4>
                 </div>
+                
                 <!--Body-->
                 <div class="modal-body">
                     <div class="md-form">

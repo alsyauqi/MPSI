@@ -1,0 +1,66 @@
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    background-color: #f8f8f8;
+}
+
+textarea {
+    resize: none;
+    border: none;
+    font-size: 17px;
+    overflow: auto;
+    text-wrap: unrestricted;
+    word-wrap: break-word;
+    padding: 3px 5px 3px 3px;
+    border: 1px solid #d3d3d3;
+}
+
+.plus-button {
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 5px 0;
+    width: 835px;
+    color : #d0d0d0;  
+    cursor: pointer;
+}
+
+tr {
+    margin: 0;
+    padding: 0;
+}
+
+.daycounter {
+    display: inline-block;
+    position: relative;
+    top: -6px;
+    
+}
+
+input[type="date"] {
+    position: relative;
+    top : -2px;
+}
+
+.delete-button {
+    font-size = 14px;
+}
+
+.info {
+    position: relative;
+    top: -5px;
+    font-size: 13px;
+    padding-left: 10px;
+    color: #0fa31b;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.desc {
+    display: none;
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    width: 400px;
+    padding: 5px;
+    border: 1px solid #0fa31b;
+}

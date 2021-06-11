@@ -1,0 +1,194 @@
+<html>
+<head>
+	<title> Beasiswa.com </title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="style2.css" rel="stylesheet">
+	<link href="daftar.css" rel="stylesheet">
+
+	<script src="api/jquery.min.js"></script>
+	<script src="api/angular.min.js"></script>
+	<script src="api/nimfinder.js"></script>
+
+</head>
+
+<body>
+
+	<div class="sidebar">
+		<img src="logo.png">
+		<table>
+			<tr><td><div class="sidebar_menu"> <a href="index.html">Semua</a></div></td></tr>
+			<tr><td><div class="sidebar_menu active"> Detil Beasiswa </div></td></tr>
+		</table>
+	</div>
+
+	<div class="header_fixed">
+		<div class="baseline_title_lv2 sticky"> 
+			<h2> Pendaftaran Beasiswa  </h2> ABB Jurgen Dormann Foundation  
+			<br>
+			<table class="tabdaftar"">
+			<tr>
+				<td class="active"> <a href="daftar1.html"> Memulai </a> </td>
+				<td class="active"> <a href="daftar2.html"> Formulir </a></td> 
+				<td> <a href="daftar3.html"> Berkas </a></td>
+				<td> <a href="daftar4.html"> Pratinjau </a></td>
+			</tr>
+			</table>
+				<hr> 
+				<hr class="nya_berita">
+		</div>
+	</div>	
+
+	<div class="wrapper-daftar" ng-app="nimfinder" ng-controller="nimcontroller">
+		<h1>Formulir Pendaftaran</h1>
+		<h2>Cukup sekali isi untuk seluruh beasiswa. Sudah pernah mengisi? Silakan <a type="button" onClick="document.getElementById('id01').style.display='block'" style="color:green;">login</a></h2>
+		<br>
+		<h3>Data Diri</h3>
+		
+		<div class="daftar_beasiswa">
+			Nama Lengkap<br>
+			<input class="input_daftar" type = "text" value="{{mahasiswa[0].name}}"></input>
+		</div>
+
+		<div class="daftar_beasiswa">
+			Tanggal Lahir<br>
+			<input class="input_daftar" type="date" style="width:150px;"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			Alamat<br>
+			<textarea rows="2" style="resize:none; width:65%; font-size: 16px; padding:5px;" placeholder="Jalan Mawar No.7, RT1 RW5, Kelurahan Cilok, Kecamatan Cireng"></textarea>
+
+			<table style="width:65%; padding:0px; margin:0px;">
+				<tr>
+					<td style="width:50%;">
+						<select class="input_daftar" style="width:100%;">
+						  <option value="select" selected disabled>Provinsi</option>
+						  <option value="jakarta">DKI Jakarta</option>
+						  <option value="jabar">Jawa Barat</option>
+						  <option value="jateng">Jawa Tengah</option>
+						  <option value="jatim">Jawa Timur</option>
+						</select>
+					</td>
+					<td td style="width:50%;">
+						<select class="input_daftar" style="width:100%;">
+						  <option value="select" selected disabled>Kab/Kota</option>
+						  <option value="jakarta">DKI Jakarta</option>
+						  <option value="jabar">Jawa Barat</option>
+						  <option value="jateng">Jawa Tengah</option>
+						  <option value="jatim">Jawa Timur</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="daftar_beasiswa">
+			Email<br>
+			<input  class="input_daftar" type = "email" autocomplete="on"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			No Hp<br>
+			<input  class="input_daftar" type = "text" autocomplete="on"></input>
+		</div>
+		<br>
+
+		<h3>Pendidikan</h3>
+		<div class="daftar_beasiswa">
+			Pendidikan Saat Ini<br>
+			<select class="input_daftar">
+			  <option value="select" selected disabled>Pilih Jenjang Pendidikan</option>
+			  <option value="slta">SLTA</option>
+			  <option value="s1">Kuliah S1</option>
+			  <option value="s2">Kuliah S2</option>
+			</select>
+		</div>
+
+		<div class="daftar_beasiswa">
+			Kampus/Sekolah<br>
+			<input list="kampus" class="input_daftar" autocomplete="on">
+				<datalist id="kampus">
+					<option value="Institut Teknologi Bandung">
+					<option value="Institut Teknologi Sepuluh Nopember">
+					<option value="Institut Seni Indonesia">
+					<option value="Universitas Indonesia">
+					<option value="Universitas Gajah Mada">
+					<option value="Universitas Padjajaran">
+					<option value="Universitas Andalas">
+				</datalist>
+			</input>
+		</div>	
+
+		<div class="daftar_beasiswa">
+			Nomor Induk<br>
+			<input  class="input_daftar" type = "text" ng-model="keyword" ng-change="page=1; search()"></input>			
+		</div>
+
+
+		<div class="daftar_beasiswa">
+			Jurusan<br>
+			<input  class="input_daftar" type = "text" value="{{mahasiswa[0].prodi}}"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			Angkatan<br>
+			<select class="input_daftar" style="width:150px;">
+				<option value="auto">{{mahasiswa[0].year}}</option>	
+				<option value="2013">2016</option>
+				<option value="2013">2015</option>
+				<option value="2013">2014</option>
+				<option value="2012">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+				<option value="2010">2010</option>
+				<option value="2010">2009</option>
+				<option value="2010">2008</option>
+			</select>
+		</div>
+		
+		<div class="daftar_beasiswa">
+			IPK (skala 4)<br>
+			<input class="input_daftar" type="text" name="ipk" style="width:115px !important;"></input>
+		</div>
+
+		
+		<a href="daftar1.html"> <div class="btn btnkiri"> Kembali </div> </a>
+		<a href="daftar3.html"> <div class="btn btnkanan"> Lanjutkan </div> </a>		
+		<br>
+		<br>
+
+
+		<!-- MODAL -->
+		<div id="id01" class="modal">
+		  <form class="modal-content animate" action="">
+
+		    <div class="modal-form">
+		      <label><b>Email</b></label>&nbsp;
+		      <input class="input_login" type="text" placeholder="Enter Username" name="uname" class="input_daftar" required>
+		      <br>
+		      <label><b>Password</b></label>&nbsp;
+		      <input class="input_login" type="password" placeholder="Enter Password" name="psw" class="input_daftar" 	required>
+		        
+		      <button type="submit">Masuk</button>
+		      <input type="checkbox" checked="checked"> Ingat saya
+		    </div>
+
+		    <div class="container" style="background-color:#f1f1f1">
+		      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		      <span class="psw">lupa password</span>
+		    </div>
+		  </form>
+		</div>
+
+	</div>
+	</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

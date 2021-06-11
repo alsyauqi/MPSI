@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title> Beasiswa.com </title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="daftar.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="style2.css" rel="stylesheet">
+	<script src="api/angular.min.js"></script>
+	<script src="api/formhandling.js"></script>
+</head>
+
+<body>
+
+	<div class="sidebar">
+		<img src="logo.png">
+		<table>
+			<tr><td><div class="sidebar_menu"> <a href="index.html">Semua</a></div></td></tr>
+			<tr><td><div class="sidebar_menu active"> Detil Beasiswa </div></td></tr>
+
+		</table>
+	</div>
+
+	<div class="header_fixed">
+		<div class="baseline_title_lv2 sticky"> 
+			<h2> Pendaftaran Beasiswa  </h2> ABB Jurgen Dormann Foundation  
+			<br>
+			<table class="tabdaftar"">
+			<tr>
+				<td class="active"> <a href="daftar1.html"> Memulai </a> </td>
+				<td class="active"> <a href="daftar2.html"> Formulir </a></td> 
+				<td class="active"> <a href="daftar3.html"> Bekas </a></td>
+				<td> <a href="daftar4.html"> Pratinjau </a></td>
+			</tr>
+			</table>
+				<hr> 
+				<hr class="nya_qa">
+		</div>
+	</div>
+
+
+	<div class="wrapper-daftar">
+		<h1>Unggah Bekas</h1>
+		<br>
+
+		<div class="daftar_beasiswa">
+			Pas Foto<br>
+			<label for="file1" class="uploadbutton" > Browse </label>
+			<input id="file1" type="file" class="uploadbutton" style="visibility:hidden;"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			KTM (scan)<br>
+			<label for="file1" class="uploadbutton" > Browse </label>
+			<input id="file1" type="file" class="uploadbutton" style="visibility:hidden;"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			Transkrip Akademik<br>
+			<label for="file1" class="uploadbutton"> Browse </label>
+			<input id="file1" type="file" class="uploadbutton" style="visibility:hidden;"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			Prestasi<br>
+			<div ng-app="app" ng-controller="MyCtrl">
+				<div ng-repeat="name in data.names track by $index">
+					<label for="file1" class="uploadbutton" > Browse </label>
+					<input id="file1" type="file" class="uploadbutton" style="visibility:hidden;"></input><br>
+					<input class="input_daftar" type="text" ng-model="data.names[$index].name">
+					<div class="btnform btnplus" ng-click="addRow($index)" value="Add" ng-show="$last"><a href="">.+.</a></div>
+					<div class="btnform btnminus" ng-click="deleteRow($event,$index)" ng-show="$index != 0"><a href="">.--.</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="daftar_beasiswa">
+			Rekomendasi Dosen<br>
+			<label for="file1" class="uploadbutton"> Browse </label>
+			<input id="file1" type="file" class="uploadbutton" style="visibility:hidden;"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			Rekomendasi Teman<br>
+			<label for="file1" class="uploadbutton"> Browse </label>
+			<input id="file1" type="file" class="uploadbutton" style="visibility:hidden;"></input>
+		</div>
+		<div class="daftar_beasiswa">
+			Surat Keterangan Penghasilan Orangtua <br>
+			<label for="file1" class="uploadbutton"> Browse </label>
+			<input id="file1" type="file" class="uploadbutton" style="visibility:hidden;"></input>
+		</div>
+
+		<a href="daftar1.html"> <div class="btn btnkiri"> Kembali </div> </a>
+		<a href="daftar4.html"> <div class="btn btnkanan"> Lanjutkan </div> </a>				
+		<br>
+		<br>
+	</div>
+
+	</div>
+</body>
+</html>

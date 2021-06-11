@@ -1,0 +1,197 @@
+<html>
+<head>
+	<title> Beasiswa.com </title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="style2.css" rel="stylesheet">
+	<link href="editDetail.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="sidebar">
+		<img src="logo.png">
+        <table>
+            <tr><td><a href="HomeKelola.html"><div class="sidebar_menu active"> Home </div></a></td></tr>
+            <tr><td><div class="sidebar_menu "> Profil </div></td></tr><tr><td><div class="sidebar_menu "> Logout </div></td></tr>
+        </table>
+	</div>
+
+	<div class="baseline_title_lv2" style="top : -25px"> <h2> Pengelolaan Beasiswa  </h2><textarea rows="1" cols="46" class="text" style="font-size: 28px;" onfocus="init(this);">Masukan nama beasiswa</textarea>
+
+        <div align ="right" class="dbutton" style="font-size:18px"> <a href="kelola1.html">  Simpan </a></div>
+
+	<br>
+	<table class="tab_kelola">
+	<tr>
+		<td class="active">  Detil </td>
+	</table>
+		<hr>
+		<hr class="nya">
+
+	</div>
+
+
+	<div class="wrapper2">
+		
+		<h1>Prasyarat<span class="info" onmouseover="showDesc(this);" onmouseout="hideDesc(this);">[?]</span></h1>
+        <p class="desc">Prasyarat berisikan informasi mengenai syarat-syarat yang berhubungan dengan kondisi dari pendaftar beasiswa seperti : nilai ipk, jurusan dan perguran tinggi dari pendaftar.</p>
+		<textarea rows="1" cols="90" class="text" onfocus="init(this);">Masukan prasyarat dari beasiswa</textarea>
+		<div>
+            <h1>Fasilitas yang Diberikan<span class="info" onmouseover="showDesc(this);" onmouseout="hideDesc(this);">[?]</span></h1>
+            <p class="desc">Fasilitas yang Diberikan berisikan informasi mengenai fasilitas-fasilitas yang diberikan penyedia beasiswa kepada penerima beasiswa nantinya.</p>
+            <textarea rows="1" cols="90" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Masukan fasilitas yang diberikan</textarea>
+            <h2 class="plus-button add">+ Tambah fasilitas</h2>
+        </div>
+
+        <div>
+            <h1>Berkas yang Dikumpulkan<span class="info" onmouseover="showDesc(this);" onmouseout="hideDesc(this);">[?]</span></h1>
+            <p class="desc">Berkas yang Dikumpulkan berisikan informasi mengenai berkas-berkas yang harus dikumpulkan oleh pendaftar beasiswa sebagai syarat dari beasiswa seperti : rekening listrik, surat rekomendasi dosen, surat keterangan hasil orang tua</p>
+            <table class="syarat_umum">
+            <tr><td> <textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Masukan syarat umum</textarea></td>		<td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Masukan syarat umum</textarea>
+                 </td></tr>
+            </table>
+            <h2 class="plus-button add">+ Tambah syarat umum</h2>
+        </div>
+
+        <div>
+            <h1>Tanggal Penting<span class="info" onmouseover="showDesc(this);" onmouseout="hideDesc(this);">[?]</span></h1>
+            <p class="desc">Tanggal Penting berisikan informasi mengenai waktu-waktu yang perlu diketahui oleh pendaftar beasiswa seperti : waktu terakhir pendaftaran dan waktu pengumuman penerima beasiswa</p>
+            <table class="syarat_umum">
+            <tr><td> <span class="daycounter"><b>H-??  </b></span> <textarea rows="1" cols="40" class="text" onblur="hapusTanggal(this);" onfocus="init(this);insertDeleteButtonTanggal(this)">Masukan keterangan tanggal</textarea></td><td><input type="date" name="bday"></td></tr>
+            </table>
+            <h2 class="plus-button add" style="
+            margin-bottom: 50px">+ Tambah tanggal penting</h2>
+		</div>
+
+
+
+	</div>
+
+    <script>
+        //Auto resize text area
+        var observe;
+        if (window.attachEvent) {
+            observe = function (element, event, handler) {
+                element.attachEvent('on'+event, handler);
+            };
+        }
+        else {
+            observe = function (element, event, handler) {
+                element.addEventListener(event, handler, false);
+            };
+        }
+        function init (text) {
+            function resize () {
+                text.style.height = 'auto';
+                text.style.height = text.scrollHeight+'px';
+            }
+            /* 0-timeout to get the already changed text */
+            function delayedResize () {
+                window.setTimeout(resize, 0);
+            }
+            observe(text, 'change',  resize);
+            observe(text, 'cut',     delayedResize);
+            observe(text, 'paste',   delayedResize);
+            observe(text, 'drop',    delayedResize);
+            observe(text, 'keydown', delayedResize);
+
+            text.focus();
+            text.select();
+            resize();
+        };
+        var syaratKhusus = document.getElementsByClassName("add")[0];
+        var syaratUmum = document.getElementsByClassName("add")[1];
+        var tanggalPenting = document.getElementsByClassName("add")[2];
+        function tambahSyaratKhusus () {
+            var newItem = document.createElement("textarea");
+            newItem.setAttribute("rows","1");
+            newItem.setAttribute("cols","90");
+            newItem.setAttribute("id","text");
+            newItem.setAttribute("onblur","hapus(this)");
+            newItem.setAttribute("onfocus","init(this);insertDeleteButton(this)");
+            newItem.innerHTML = 'Tambahkan syarat khusus di sini';
+            this.parentElement.insertBefore(newItem,this);
+        }
+        function tambahSyaratUmum () {
+            var tabelUmum = document.getElementsByClassName("syarat_umum")[0];
+            var newRow = tabelUmum.insertRow(tabelUmum.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = '<textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Masukan syarat umum</textarea>';
+            cell2.innerHTML = '<textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Masukan syarat umum</textarea>';
+        }
+        function tambahTanggalPenting () {
+            var tabelUmum = document.getElementsByClassName("syarat_umum")[1];
+            var newRow = tabelUmum.insertRow(tabelUmum.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = '<span class="daycounter"><b>H-??  </b></span> <textarea rows="1" cols="40" class="text" onblur="hapusTanggal(this);" onfocus="init(this);insertDeleteButtonTanggal(this)">Masukan keterangan tanggal</textarea>';
+            cell2.innerHTML = '<input type="date" name="bday">';
+        }
+       function insertDeleteButton(e) {
+           var delet = document.createElement("p");
+           delet.setAttribute("style","display:block;color:red;cursor:pointer;font-size:14px;border:1px solid red;width:45px;padding: 2px 3px;margin:2px;");
+           delet.setAttribute("onclick","hapusDariTombol(this);")
+           delet.innerHTML = "Delete";
+           e.parentElement.insertBefore(delet,e);
+       }
+        function insertDeleteButtonTanggal(e) {
+           var delet = document.createElement("p");
+           delet.setAttribute("style","display:block;color:red;cursor:pointer;font-size:14px;border:1px solid red;width:45px;padding: 2px 3px;margin:2px;");
+           delet.setAttribute("onclick","hapusDariTombolTanggal(this);")
+           delet.innerHTML = "Delete";
+           var prev = e.previousElementSibling;
+           prev.parentElement.insertBefore(delet,prev);
+       }syaratKhusus.addEventListener('click',tambahSyaratKhusus,false);
+        syaratUmum.addEventListener('click',tambahSyaratUmum,false);
+        tanggalPenting.addEventListener('click',tambahTanggalPenting,false);
+        function hapus(e) {
+            setTimeout(function(){
+               var prev = e.previousElementSibling;
+                if (prev) {
+                    if (!e.value){
+                        e.parentElement.removeChild(e);
+                    }
+                    prev.parentElement.removeChild(prev);
+                }
+            },250);
+        }
+        function hapusTanggal(e) {
+            setTimeout(function(){
+               var prev = e.previousElementSibling.previousElementSibling;
+                if (prev) {
+                    if (!e.value){
+                        e.parentElement.removeChild(e);
+                    }
+                    prev.parentElement.removeChild(prev);
+                }
+            },250);
+        }
+        function hapusDariTombol(e) {
+            var next = e.nextElementSibling;
+            next.parentElement.removeChild(next);
+            e.parentElement.removeChild(e);
+        }
+        function hapusDariTombolTanggal(e) {
+            var row = e.parentElement.parentElement;
+            row.parentElement.removeChild(row);
+        }
+        function showDesc (e) {
+            var el = e.parentElement.nextElementSibling;
+            el.style.display = "block";
+        }
+        function hideDesc (e) {
+            var el = e.parentElement.nextElementSibling;
+            el.style.display = "none";
+        }
+    </script>
+
+
+
+</body>
+
+
+
+</html>

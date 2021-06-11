@@ -1,0 +1,88 @@
+/* The alert message box */
+.alert {
+    padding: 0 5px;
+    display: inline-block;
+    border: 0.4px solid #959595;
+    color: #959595;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 5px;
+    color: #959595;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: #000000;
+}
+
+.container {
+    margin-left: 18px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.informasi {
+    height: 25px;
+    width: 180px;
+}
+
+select.form-control.input-sm {
+    height: 22px;
+}
+
+input.form-control.input-sm {
+    height: 22px;
+}
+
+.Tambahkan {
+    height: 25px;
+    background: white;
+    border: 1px solid #959595;
+    cursor: pointer;
+}
+
+.lihat, .lihat-merah {
+    cursor: pointer;
+}
+
+.lihat-merah {
+    font-weight: 600;
+    color: red;
+}
+
+/*Tab navigation*/
+
+ul.tabs{
+    margin-bottom: -4px;
+    padding: 0px;
+    list-style: none;
+}
+ul.tabs li{
+    background: none;
+    color: #222;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+ul.tabs li.current{
+    border : 1.2px solid #ededed;
+    border-bottom: 4px solid white;
+    color: #222;
+}
+
+.tab-content{
+    border : 1.2px solid #ededed;
+    padding: 15px;
+}

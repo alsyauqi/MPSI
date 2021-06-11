@@ -1,0 +1,189 @@
+<html>
+<head>
+	<title> Beasiswa.com </title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="style2.css" rel="stylesheet">
+	<link href="editDetail.css" rel="stylesheet">
+
+</head>
+
+<body onload="init();">
+
+	<div class="sidebar">
+		<img src="logo.png">
+		<table>
+			<tr><td><div class="sidebar_menu "> Semua </div></td></tr>
+			<tr><td><div class="sidebar_menu active"> Kelola		 Beasiswa </div></td></tr>
+			<tr><td><div class="sidebar_menu"> Register </div></td></tr>
+
+		
+
+
+		</table>
+	</div>
+
+	<div class="baseline_title_lv2" style="top : -25px"> <h2> Pengelolaan Beasiswa  </h2><textarea rows="1" cols="52" id="text" style="font-size: 28px;">ABB Jurgen Dormann Foundation</textarea>   
+
+        <div align ="right" class="dbutton" style="font-size:18px"> <a href="kelola1.html">  Simpan </a></div>
+
+	<br>
+	<table class="tab_kelola">
+	<tr>
+		<td class="active">  Detil </td>
+	</table>
+		<hr> 
+		<hr class="nya">
+
+	</div>
+
+
+	<div class="wrapper2">
+		
+		<h1>Prasyarat</h1>
+		<textarea rows="1" cols="90" id="text">S1 Teknik Elektro ITB 2013 , IPK >= 3.00</textarea>
+		
+        <div>
+            <h1>Fasilitas yang Diberikan </h1>
+            <textarea rows="1" cols="90" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Bebas UKT s.d. Semester 8</textarea>
+            <textarea rows="1" cols="90" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Bantuan Biaya</textarea>
+            <textarea rows="1" cols="90" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Laptop</textarea>
+            <h2 class="plus-button add">+ Tambah fasilitas yang diberikan</h2>
+        </div>
+
+        <div>
+            <h1>Berkas yang Dikumpulkan</h1>
+            <table class="syarat_umum">
+            <tr><td> <textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Surat Keterangan Penghasilan Orangtua</textarea></td>		<td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Rekening Listrik / PBB</textarea>
+                 </td></tr>
+            <tr><td> <textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Rekomendasi Dosen</textarea> </td> 							<td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Kartu Keluarga</textarea></td></tr>
+            <tr><td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Rekomendasi Teman</textarea></td> 							<td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Rekening BNI Atas Nama Sendiri </textarea></td></tr>
+            <tr><td> <textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">KTM </textarea></td> 										<td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Transkrip IPK  </textarea></td></tr>
+            <tr><td> <textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">KSM Semester Terakhir</textarea> </td>						<td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Personal Motivation Letter</textarea></td></tr>
+            <tr><td> <textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Sertifikat Pendaftaran</textarea> </td>						<td><textarea rows="1" cols="45" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Rekomendasi Dekan / WDA</textarea></td></tr>
+            </table>
+            <h2 class="plus-button add">+ Tambah berkas-berkas yang dikumpulkan</h2>
+        </div>
+            
+        <div>
+            <h1>Tanggal Penting </h1>
+            <table class="syarat_umum">
+            <tr><td> <span class="daycounter"><b>H-52  </b></span> <textarea rows="1" cols="40" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButtonTanggal(this)">Penutupan Pendaftaran</textarea> </td>		<td>14 Januari 2017 </td></tr>
+            <tr><td> <span class="daycounter"><b>H-72  </b></span> <textarea rows="1" cols="40" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButtonTanggal(this)">Pengumuman</textarea></td><td>15 Januari 2017</td></tr>
+            <tr><td> <span class="daycounter"><b>H-??  </b></span> <textarea rows="1" cols="40" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButtonTanggal(this)">Tambah keterangan tanggal</textarea></td><td><input type="date" name="bday"></td></tr>
+            </table>
+            <h2 class="plus-button add" style="
+            margin-bottom: 50px">+ Tambah tanggal penting</h2>
+		</div>
+		
+
+
+	</div>
+
+    <script>
+        //Auto resize text area
+        var observe;
+        if (window.attachEvent) {
+            observe = function (element, event, handler) {
+                element.attachEvent('on'+event, handler);
+            };
+        }
+        else {
+            observe = function (element, event, handler) {
+                element.addEventListener(event, handler, false);
+            };
+        }
+        function init (text) {
+            function resize () {
+                text.style.height = 'auto';
+                text.style.height = text.scrollHeight+'px';
+            }
+            /* 0-timeout to get the already changed text */
+            function delayedResize () {
+                window.setTimeout(resize, 0);
+            }
+            observe(text, 'change',  resize);
+            observe(text, 'cut',     delayedResize);
+            observe(text, 'paste',   delayedResize);
+            observe(text, 'drop',    delayedResize);
+            observe(text, 'keydown', delayedResize);
+
+            text.focus();
+            text.select();
+            resize();
+        };
+        var syaratKhusus = document.getElementsByClassName("add")[0];
+        var syaratUmum = document.getElementsByClassName("add")[1];
+        var tanggalPenting = document.getElementsByClassName("add")[2];
+        function tambahSyaratKhusus () {
+            var newItem = document.createElement("textarea");
+            newItem.setAttribute("rows","1");
+            newItem.setAttribute("cols","90");
+            newItem.setAttribute("id","text");
+            newItem.setAttribute("onblur","hapus(this)");
+            newItem.setAttribute("onfocus","init(this);insertDeleteButton(this)");
+            newItem.innerHTML = 'Tambahkan prasyarat di sini';
+            this.parentElement.insertBefore(newItem,this);
+        }
+        function tambahSyaratUmum () {
+            var tabelUmum = document.getElementsByClassName("syarat_umum")[0];
+            var newRow = tabelUmum.insertRow(tabelUmum.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = '<textarea rows="1" cols="90" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Masukan syarat umum</textarea>';
+            cell2.innerHTML = '<textarea rows="1" cols="90" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButton(this)">Masukan berkas yang harus dikumpulkan</textarea>';
+        }
+        function tambahTanggalPenting () {
+            var tabelUmum = document.getElementsByClassName("syarat_umum")[1];
+            var newRow = tabelUmum.insertRow(tabelUmum.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = '<span class="daycounter"><b>H-??  </b></span> <textarea rows="1" cols="40" class="text" onblur="hapus(this);" onfocus="init(this);insertDeleteButtonTanggal(this)">Masukan keterangan tanggal</textarea>';
+            cell2.innerHTML = '<input type="date" name="bday">';
+        }
+       function insertDeleteButton(e) {
+           var delet = document.createElement("p");
+           delet.setAttribute("style","display:block;color:red;cursor:pointer;font-size:14px;border:1px solid red;width:45px;padding: 2px 3px;margin:2px;");
+           delet.setAttribute("onclick","hapusDariTombol(this);")
+           delet.innerHTML = "Delete";
+           e.parentElement.insertBefore(delet,e);
+       }
+        function insertDeleteButtonTanggal(e) {
+           var delet = document.createElement("p");
+           delet.setAttribute("style","display:block;color:red;cursor:pointer;font-size:14px;border:1px solid red;width:45px;padding: 2px 3px;margin:2px;");
+           delet.setAttribute("onclick","hapusDariTombolTanggal(this);")
+           delet.innerHTML = "Delete";
+           var prev = e.previousElementSibling;
+           prev.parentElement.insertBefore(delet,prev);
+       }syaratKhusus.addEventListener('click',tambahSyaratKhusus,false);
+        syaratUmum.addEventListener('click',tambahSyaratUmum,false);
+        tanggalPenting.addEventListener('click',tambahTanggalPenting,false);
+        function hapus(e) {
+            setTimeout(function(){
+               var prev = e.previousElementSibling;
+                if (prev) {
+                    if (!e.value){
+                        e.parentElement.removeChild(e);
+                    }
+                    prev.parentElement.removeChild(prev);
+                }
+            },250);
+        }
+        function hapusDariTombol(e) {
+            var next = e.nextElementSibling;
+            next.parentElement.removeChild(next);
+            e.parentElement.removeChild(e);
+        }
+        function hapusDariTombolTanggal(e) {
+            var row = e.parentElement.parentElement;
+            row.parentElement.removeChild(row);
+        }
+    </script>
+
+
+
+</body>
+
+
+
+</html>

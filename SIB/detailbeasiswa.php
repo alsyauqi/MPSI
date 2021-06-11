@@ -116,6 +116,7 @@
 			</div>
 		</div>
 	</div>
+	
 
 	<div class="streak streak-lg streak-photo" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20(6).jpg')">
 		<div class="flex-center white-text pattern-1">

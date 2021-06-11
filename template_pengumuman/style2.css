@@ -1,0 +1,148 @@
+.tabdaftar {
+  margin-top: 5px;
+  width: 543px;
+  text-align: left;
+  padding: 1px 0px;
+  text-align: left;
+  padding-bottom: 14px;
+  margin-bottom: 0px;
+  table-layout: fixed;
+  margin-left: 15px;
+  }
+
+
+.dbutton:hover {
+  color:white;
+  background-color: rgb(51, 128,1);
+}
+
+.input_qa {
+  width: 80%;
+height: 52px;
+padding: 7px;
+}
+
+.input_faq {
+  width: 60%;
+height: 52px;
+padding: 7px;
+}
+
+.syarat_umum {
+table-layout: fixed;
+width: 901px;
+height: 22px;
+margin-left: -3px;
+margin-top: 3px;
+}
+
+.lanjutgan {
+  position: absolute;
+  margin-top: 24px;
+  margin-left: 3px;
+  padding: 6px 26px;
+  color: rgb(51, 128, 1);
+  border-radius: 3px;
+  border: 1px solid rgb(51, 128,1);
+  font-size: 21px;
+  background-color: rgb(51, 128,1);
+  color:white;
+}
+
+.lanjutgan:hover{
+  color:white;
+  background-color: darkgreen;
+}
+
+.balikgan {
+  position: absolute;
+  margin-top: 24px;
+  margin-left: 3px;
+  padding: 6px 26px;
+  color: rgb(105,105,105);
+  border-radius: 3px;
+  border: 1px solid rgb(105,105,105);
+  font-size: 21px;
+  background-color: rgb(105,105,105);
+  color:white;
+}
+
+.input_daftar {
+  font-size: 16px;
+  width: 65% !important;
+  height: 50px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.dropdown-daftar{
+  width: 86%;
+  height: 52px;
+}
+
+.tab_kelola {
+  margin-top: 18px;
+  width: 799px;
+  text-align: left;
+  padding: 1px 0px;
+  text-align: left;
+  padding-bottom: 14px;
+  margin-bottom: 0px;
+  table-layout: fixed;
+  margin-left: 40px;
+}
+
+.lihat {
+    color: rgb(51, 128,1);
+    font-weight: 600;
+}
+
+}
+
+#sticky {
+    margin-top: 0 !important;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+.btnform{
+  margin-left: 15px;
+  font-size: 24px;
+  border-radius: 100%;
+  color: #fff;
+  text-align: center;
+  display: inline;
+}
+
+.btnplus{
+  background-color: green;
+}
+
+.btnplus:hover {
+  background-color: darkgreen;
+}
+
+.btnminus{
+  background-color: red;
+}
+
+.btnminus:hover {
+  background-color: darkred;
+}
+
+.uploadbutton {
+  width: 80px;
+  text-align: center;
+  margin-top: 15px;
+  padding: 8px 22px;
+  color: rgb(51, 128, 1);
+  border-radius: 3px;
+  border: 1px solid rgb(51, 128,1);
+}
+
+.uploadbutton:hover {
+  background-color: green;
+  color: white;
+}

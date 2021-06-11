@@ -303,7 +303,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#panelLoginEksternal" role="tab
-                            "><i class="fa fa-user mr-1"></i> Pendonor</a>
+                            "><i class="fa fa-user mr-1"></i> Donatur</a>
                         </li>
                     </ul>
 

@@ -114,6 +114,47 @@
 			}
 		});
 	}
+	$("form").submit(function(e){
+				var isValid = true;
+				var counter = 1;
+				var url = "script-register.php";
+
+				$("input,textarea").each(function(){
+					if($.trim($(this).val()).length == 0){
+						var fieldKosong = $(this).attr("idField");			
+						isValid = false;
+						toastr["error"](fieldKosong+" Kosong");
+						counter++;
+					}else{
+						$(this).focus()
+					}
+				});
+
+				if(!isValid){
+					toastr["error"]("Isi semua field yang memiliki tanda bintang (*)");
+					return isValid;
+				}else{
+					$.ajax({
+						type: "POST",
+						url: url,
+						data: $("#registerForm").serialize(),
+						success: function(data){
+							toastr["success"]("Registrasi Berhasil");
+							console.log(data);
+							$(location).attr('href',"index.php");
+						},
+						error: function(jqXHR, status, err){
+							alert("Insert gagal");
+							console.log("jqXHR : "+jqXHR);
+							console.log("status : "+status);
+							console.log("err : "+err);
+						}
+					});
+				}
+
+				e.preventDefault();
+			});
+
 
 	function tbBeasiswa(){
 		var defaultRow = 10;
@@ -590,7 +631,7 @@
 			url: url,
 			data: {'idDihapus': idDihapus},
 			success: function(data){
-				alert("User Berhasil DIhapus")
+				alert("User Berhasil Dihapus")
 				console.log(data);
 				tbUser();
 

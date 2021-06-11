@@ -1,0 +1,118 @@
+<html>
+
+<head>
+	<title> Dasbor </title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="style2.css" rel="stylesheet">
+	<link rel="stylesheet" href="dasbor.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+	<script src="modernizr.custom.80028.js"></script>
+
+</head>
+
+<body>
+	<div id="note">
+		<i class="fa fa-file-text" style="color:#0b6582"></i> <b>Hasil seleksi beasiswa ABB Jurgen Dormann Foundation telah dirilis <a id="close">[close]</a></b>
+	</div>
+
+	<div class="sidebar">
+		<img src="logo.png">
+		<table>
+			<tr>
+				<td>
+					<div class="sidebar_menu active"><a href="dasbor.html">Dasbor</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="sidebar_menu "><a href="lihatbeasiswa.html">Lihat Beasiswa</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="dropdown-notifikasi">
+					<div class="sidebar_menu"> <span><a href="dasbor.html#notifikasi">Notifikasi</a></span>
+						<div class="dropdown-notifikasi-content">
+							<div class="notifikasi-mini">
+								<b>Beasiswa ABB Jurgen Dormann Foundation yang Anda dapatkan telah dicairkan</b><br>
+								<p><i class="fa fa-money fa-2x" style="color:green"></i> <i>10 jam yang lalu</i></p>
+							</div>
+
+							<div class="notifikasi-mini">
+								<b>Hasil seleksi beasiswa ABB Jurgen Dormann Foundation telah dirilis</b><br>
+								<p><i class="fa fa-file-text fa-2x" style="color:#0b6582"></i> <i>28 Oktober 2016 pukul 10.00</i></p>
+							</div>
+
+							<div class="notifikasi-mini">
+								<b>Pertanyaan Anda untuk beasiswa ABB Jurgen Dormann Foundation telah dijawab</b><br>
+								<p><i class="fa fa-check-square fa-2x" style="color:#1a9380"></i> <i>23 September 2016 pukul 13.00</i></p>
+							</div>
+
+							<div class="notifikasi-mini">
+								<b>Pertanyaan Anda untuk beasiswa ABB Jurgen Dormann Foundation telah dijawab</b><br>
+								<p><i class="fa fa-check-square fa-2x" style="color:#1a9380"></i> <i>20 September 2016 pukul 16.00</i></p>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="sidebar_menu"><a href="login.html">Logout</a></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="baseline_title_lv2"> Dasbor </div>
+
+	<div class="wrapper-status-beasiswa">
+		<b>STATUS PENGAJUAN BEASISWA</b>
+		<div class="status-beasiswa">
+			<b>ABB Jurgen Dormann Foundation</b>
+			<p><i class="fa fa-check-circle" style="color:green"></i> Diterima</p>
+		</div>
+		<div class="status-beasiswa">
+			<b>Bakti BCA</b>
+			<p><i class="fa fa-times-circle" style="color:red"></i> Ditolak</p>
+		</div>
+		<div class="status-beasiswa">
+			<b>BBM</b>
+			<p><i class="fa fa-refresh"></i> Diproses</p>
+		</div>
+	</div>
+
+	<div id="notifikasi" class="wrapper-notifikasi">
+		<b>NOTIFIKASI</b>
+		<div class="notifikasi">
+			<b>Beasiswa ABB Jurgen Dormann Foundation yang Anda dapatkan telah dicairkan</b><br>
+			<h2><i class="fa fa-money fa-2x" style="color:green"></i> <i>10 jam yang lalu</i></h2>
+		</div>
+
+		<div class="notifikasi">
+			<b>Hasil seleksi beasiswa ABB Jurgen Dormann Foundation telah dirilis</b><br>
+			<h2><i class="fa fa-file-text fa-2x" style="color:#0b6582"></i> <i>28 Oktober 2016 pukul 10.00</i></h2>
+		</div>
+
+		<div class="notifikasi">
+			<b>Pertanyaan Anda untuk beasiswa ABB Jurgen Dormann Foundation telah dijawab</b><br>
+			<h2><i class="fa fa-check-square fa-2x" style="color:#1a9380"></i> <i>23 September 2016 pukul 13.00</i></h2>
+		</div>
+
+		<div class="notifikasi">
+			<b>Pertanyaan Anda untuk beasiswa ABB Jurgen Dormann Foundation telah dijawab</b><br>
+			<h2><i class="fa fa-check-square fa-2x" style="color:#1a9380"></i> <i>20 September 2016 pukul 16.00</i></h2>
+		</div>
+	</div>
+
+	<script>
+		close = document.getElementById("close");
+		close.addEventListener('click', function() {
+			note = document.getElementById("note");
+			note.style.display = 'none';
+		}, false);
+	</script>
+
+</body>
+
+</html>

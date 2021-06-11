@@ -75,7 +75,6 @@
 						<p style="font-weight: 300;font-size: 0.75rem">Field dengan tanda bintang (*) harus diisi</p>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
